@@ -111,11 +111,11 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center px-4">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1502325966718-85a90488dc29?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9ufGVufDB8fHxibHVlfDE3NTMzMzc1NTd8MA&ixlib=rb-4.1.0&q=85')`
           }}
@@ -124,43 +124,43 @@ const LandingPage = () => {
         <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold text-blue-900 mb-6">
               Welcome to <span className="text-blue-600">MindMate</span>
             </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+            <p className="text-xl text-blue-800 mb-8 leading-relaxed">
               Your comprehensive wellness companion for maintaining mental and physical health. 
               Build better habits, track your wellness journey, and connect with a supportive community.
             </p>
             
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+              <div className="bg-white border border-blue-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="text-3xl mb-3">🎯</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Habit Tracking</h3>
-                <p className="text-sm text-gray-600">Build lasting habits with daily check-ins and streak tracking</p>
+                <h3 className="font-semibold text-blue-900 mb-2">Habit Tracking</h3>
+                <p className="text-sm text-blue-700">Build lasting habits with daily check-ins and streak tracking</p>
               </div>
               
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+              <div className="bg-white border border-blue-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="text-3xl mb-3">📊</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Wellness Dashboard</h3>
-                <p className="text-sm text-gray-600">Monitor mood, stress, and productivity with beautiful insights</p>
+                <h3 className="font-semibold text-blue-900 mb-2">Wellness Dashboard</h3>
+                <p className="text-sm text-blue-700">Monitor mood, stress, and productivity with beautiful insights</p>
               </div>
               
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+              <div className="bg-white border border-blue-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="text-3xl mb-3">👥</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Social Support</h3>
-                <p className="text-sm text-gray-600">Connect with friends and join community challenges</p>
+                <h3 className="font-semibold text-blue-900 mb-2">Social Support</h3>
+                <p className="text-sm text-blue-700">Connect with friends and join community challenges</p>
               </div>
             </div>
           </div>
 
           {/* Right Side - Auth Form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8">
+          <div className="bg-white border border-blue-200 rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              <h2 className="text-3xl font-bold text-blue-900 mb-2">
                 {isLogin ? 'Welcome Back!' : 'Join MindMate'}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-blue-700">
                 {isLogin ? 'Sign in to continue your wellness journey' : 'Start your wellness journey today'}
               </p>
             </div>
@@ -175,7 +175,7 @@ const LandingPage = () => {
               {!isLogin && (
                 <>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-blue-900 mb-2">
                       Full Name
                     </label>
                     <input
@@ -183,20 +183,20 @@ const LandingPage = () => {
                       required
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="Enter your full name"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-blue-900 mb-2">
                       Age (Optional)
                     </label>
                     <input
                       type="number"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="Enter your age"
                     />
                   </div>
@@ -204,7 +204,7 @@ const LandingPage = () => {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-blue-900 mb-2">
                   Email Address
                 </label>
                 <input
@@ -212,13 +212,13 @@ const LandingPage = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                   placeholder="Enter your email"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-blue-900 mb-2">
                   Password
                 </label>
                 <input
@@ -226,7 +226,7 @@ const LandingPage = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                   placeholder="Enter your password"
                 />
               </div>
