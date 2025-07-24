@@ -80,8 +80,8 @@ class MindMateAPITester:
         print("\n=== Testing User Login ===")
         
         login_data = {
-            "email": "sarah.wellness@mindmate.com",
-            "password": "SecurePass123!"
+            "email": self.test_email,
+            "password": self.test_password
         }
         
         try:
@@ -99,10 +99,12 @@ class MindMateAPITester:
                 return True
             else:
                 print(f"❌ Login failed: {response.text}")
+                print("⚠️  CRITICAL BUG: User model doesn't store password field - login will always fail")
                 return False
                 
         except Exception as e:
             print(f"❌ Login error: {str(e)}")
+            print("⚠️  CRITICAL BUG: User model doesn't store password field - login will always fail")
             return False
     
     def test_get_current_user(self):
