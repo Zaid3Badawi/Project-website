@@ -333,9 +333,9 @@ const Dashboard = () => {
     <div className="space-y-8">
       {/* Welcome Banner */}
       <div 
-        className="rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 relative overflow-hidden"
+        className="rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8 relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8)), url('https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxtZW50YWwlMjBoZWFsdGh8ZW58MHx8fGJsdWV8MTc1MzMzNzU1MHww&ixlib=rb-4.1.0&q=85')`,
+          backgroundImage: `linear-gradient(rgba(37, 99, 235, 0.9), rgba(29, 78, 216, 0.9)), url('https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxtZW50YWwlMjBoZWFsdGh8ZW58MHx8fGJsdWV8MTc1MzMzNzU1MHww&ixlib=rb-4.1.0&q=85')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -345,7 +345,7 @@ const Dashboard = () => {
           <p className="text-blue-100 mb-6">Keep up the great work! Here's your progress overview.</p>
           
           {dashboardData && (
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 inline-block">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 inline-block border border-white/30">
               <div className="text-2xl font-bold">{dashboardData.wellness_score}%</div>
               <div className="text-sm text-blue-100">Overall Wellness Score</div>
             </div>
@@ -356,42 +356,42 @@ const Dashboard = () => {
       {/* Stats Grid */}
       {dashboardData && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6">
             <div className="flex items-center">
               <div className="text-3xl mr-4">🎯</div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">{dashboardData.habit_completion_rate}%</div>
-                <div className="text-sm text-gray-600">Habit Completion</div>
+                <div className="text-2xl font-bold text-blue-900">{dashboardData.habit_completion_rate}%</div>
+                <div className="text-sm text-blue-700">Habit Completion</div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6">
             <div className="flex items-center">
               <div className="text-3xl mr-4">😊</div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">{dashboardData.mood_average}/5</div>
-                <div className="text-sm text-gray-600">Average Mood</div>
+                <div className="text-2xl font-bold text-blue-900">{dashboardData.mood_average}/5</div>
+                <div className="text-sm text-blue-700">Average Mood</div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6">
             <div className="flex items-center">
               <div className="text-3xl mr-4">🧘</div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">{dashboardData.stress_average}/5</div>
-                <div className="text-sm text-gray-600">Stress Level</div>
+                <div className="text-2xl font-bold text-blue-900">{dashboardData.stress_average}/5</div>
+                <div className="text-sm text-blue-700">Stress Level</div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6">
             <div className="flex items-center">
               <div className="text-3xl mr-4">⚡</div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">{dashboardData.productivity_average}/10</div>
-                <div className="text-sm text-gray-600">Productivity</div>
+                <div className="text-2xl font-bold text-blue-900">{dashboardData.productivity_average}/10</div>
+                <div className="text-sm text-blue-700">Productivity</div>
               </div>
             </div>
           </div>
@@ -399,25 +399,25 @@ const Dashboard = () => {
       )}
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-bold mb-4">Quick Actions</h2>
+      <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6">
+        <h2 className="text-xl font-bold text-blue-900 mb-4">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button className="bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg p-4 text-left transition-colors">
             <div className="text-2xl mb-2">📝</div>
-            <div className="font-semibold text-gray-900">Log Mood</div>
-            <div className="text-sm text-gray-600">Record how you're feeling today</div>
+            <div className="font-semibold text-blue-900">Log Mood</div>
+            <div className="text-sm text-blue-700">Record how you're feeling today</div>
           </button>
           
-          <button className="bg-green-50 hover:bg-green-100 border border-green-200 rounded-lg p-4 text-left transition-colors">
+          <button className="bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg p-4 text-left transition-colors">
             <div className="text-2xl mb-2">✅</div>
-            <div className="font-semibold text-gray-900">Check-in Habit</div>
-            <div className="text-sm text-gray-600">Mark your daily habits complete</div>
+            <div className="font-semibold text-blue-900">Check-in Habit</div>
+            <div className="text-sm text-blue-700">Mark your daily habits complete</div>
           </button>
           
-          <button className="bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-lg p-4 text-left transition-colors">
+          <button className="bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg p-4 text-left transition-colors">
             <div className="text-2xl mb-2">📊</div>
-            <div className="font-semibold text-gray-900">View Progress</div>
-            <div className="text-sm text-gray-600">See your wellness trends</div>
+            <div className="font-semibold text-blue-900">View Progress</div>
+            <div className="text-sm text-blue-700">See your wellness trends</div>
           </button>
         </div>
       </div>
