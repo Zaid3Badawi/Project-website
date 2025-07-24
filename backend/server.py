@@ -75,6 +75,7 @@ class UserLogin(BaseModel):
 class User(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     email: EmailStr
+    password: str  # Store hashed password
     full_name: str
     age: Optional[int] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
