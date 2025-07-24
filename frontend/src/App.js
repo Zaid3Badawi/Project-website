@@ -1209,8 +1209,8 @@ const MainApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-lg border-b border-gray-200">
+    <div className="min-h-screen bg-blue-50">
+      <nav className="bg-white shadow-md border-b border-blue-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
@@ -1231,8 +1231,8 @@ const MainApp = () => {
                     onClick={() => setCurrentView(tab.key)}
                     className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       currentView === tab.key 
-                        ? 'bg-blue-100 text-blue-700' 
-                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                        ? 'bg-blue-100 text-blue-700 border border-blue-200' 
+                        : 'text-blue-600 hover:text-blue-800 hover:bg-blue-50'
                     }`}
                   >
                     <span>{tab.icon}</span>
@@ -1243,13 +1243,13 @@ const MainApp = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-700">Welcome, {user.full_name}</span>
+              <span className="text-sm text-blue-800">Welcome, {user.full_name}</span>
               <button
                 onClick={() => {
                   localStorage.removeItem('token');
                   window.location.reload();
                 }}
-                className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
+                className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
               >
                 Logout
               </button>
