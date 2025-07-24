@@ -107,15 +107,18 @@ user_problem_statement: "MindMate - Comprehensive wellness application to help u
 backend:
   - task: "User Authentication System"
     implemented: true
-    working: true
+    working: false
     file: "backend/server.py"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Implemented JWT-based authentication with register/login endpoints, password hashing, and user management"
+      - working: false
+        agent: "testing"
+        comment: "CRITICAL BUG FOUND: User registration works (✅) but login fails (❌) due to password field not being stored in User model. The User model excludes password field, so login always fails with KeyError. Registration returns valid JWT token, but subsequent logins are impossible. All other auth features work correctly."
 
   - task: "Habit Management System"
     implemented: true
@@ -128,6 +131,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Created habit CRUD operations, categorization, check-in system, and streak tracking"
+      - working: true
+        agent: "testing"
+        comment: "✅ All habit endpoints working perfectly: create habit (✅), get habits (✅), habit check-in (✅). Streak tracking functional, habit categorization works, check-in with notes successful."
 
   - task: "Wellness Tracking (Mood/Stress/Productivity)"
     implemented: true
@@ -140,6 +146,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Implemented mood tracking (1-5 scale), stress tracking with triggers/coping, and productivity metrics"
+      - working: true
+        agent: "testing"
+        comment: "✅ All wellness tracking endpoints working perfectly: mood logging (✅), stress logging with triggers/coping strategies (✅), productivity logging with tasks/focus time (✅). All data properly stored and retrieved."
 
   - task: "Wellness Dashboard Analytics"
     implemented: true
@@ -152,6 +161,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Built comprehensive dashboard endpoint with calculated wellness scores, averages, and completion rates"
+      - working: true
+        agent: "testing"
+        comment: "✅ Wellness dashboard working excellently: calculates wellness score (86.0), habit completion rate (100%), mood average (4.0), stress average (2.0), productivity average (8.0), streak count (1). All calculations accurate and comprehensive."
 
   - task: "Social Features (Friends System)"
     implemented: true
@@ -164,6 +176,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Implemented user discovery, friend addition, and friends list functionality"
+      - working: true
+        agent: "testing"
+        comment: "✅ All social features working perfectly: get users (✅), add friend (✅), get friends (✅). Mutual friendship system working, user discovery functional, friend lists properly maintained."
 
   - task: "Community Challenges System"
     implemented: true
@@ -176,6 +191,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Created challenge creation, listing, and participation features"
+      - working: true
+        agent: "testing"
+        comment: "✅ All challenge endpoints working perfectly: create challenge (✅), get challenges (✅), join challenge (✅). Challenge creation with categories, duration tracking, participant management all functional."
 
 frontend:
   - task: "Authentication UI (Login/Register)"
