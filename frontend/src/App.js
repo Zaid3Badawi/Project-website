@@ -667,11 +667,11 @@ const Wellness = () => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900">Wellness Tracking</h1>
+      <h1 className="text-3xl font-bold text-blue-900">Wellness Tracking</h1>
 
       {/* Tab Navigation */}
-      <div className="border-b border-gray-200">
-        <nav className="-mb-px flex space-x-8">
+      <div className="border-b border-blue-200 bg-white rounded-t-lg">
+        <nav className="-mb-px flex space-x-8 px-6 pt-2">
           {['mood', 'stress', 'productivity'].map((tab) => (
             <button
               key={tab}
@@ -679,7 +679,7 @@ const Wellness = () => {
               className={`py-2 px-1 border-b-2 font-medium text-sm capitalize transition-colors ${
                 activeTab === tab
                   ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  : 'border-transparent text-blue-600 hover:text-blue-800 hover:border-blue-300'
               }`}
             >
               {tab}
@@ -690,8 +690,8 @@ const Wellness = () => {
 
       {/* Mood Tracking */}
       {activeTab === 'mood' && (
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
-          <h2 className="text-xl font-semibold mb-6">How are you feeling today?</h2>
+        <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6 max-w-2xl">
+          <h2 className="text-xl font-semibold text-blue-900 mb-6">How are you feeling today?</h2>
           
           <div className="mb-6">
             <div className="flex justify-center space-x-4 mb-4">
@@ -700,26 +700,26 @@ const Wellness = () => {
                   key={index}
                   onClick={() => setMoodLevel(index + 1)}
                   className={`text-4xl p-2 rounded-full transition-all ${
-                    moodLevel === index + 1 ? 'bg-blue-100 scale-125' : 'hover:bg-gray-100'
+                    moodLevel === index + 1 ? 'bg-blue-100 scale-125 border-2 border-blue-300' : 'hover:bg-blue-50'
                   }`}
                 >
                   {emoji}
                 </button>
               ))}
             </div>
-            <div className="text-center text-lg font-medium text-gray-700">
+            <div className="text-center text-lg font-medium text-blue-800">
               {['Very Bad', 'Bad', 'Neutral', 'Good', 'Excellent'][moodLevel - 1]}
             </div>
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-blue-900 mb-2">
               Notes (Optional)
             </label>
             <textarea
               value={moodNotes}
               onChange={(e) => setMoodNotes(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="What's influencing your mood today?"
               rows="3"
             />
@@ -736,8 +736,8 @@ const Wellness = () => {
 
       {/* Stress Tracking */}
       {activeTab === 'stress' && (
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
-          <h2 className="text-xl font-semibold mb-6">What's your stress level?</h2>
+        <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6 max-w-2xl">
+          <h2 className="text-xl font-semibold text-blue-900 mb-6">What's your stress level?</h2>
           
           <div className="mb-6">
             <div className="flex justify-center space-x-4 mb-4">
@@ -746,26 +746,26 @@ const Wellness = () => {
                   key={index}
                   onClick={() => setStressLevel(index + 1)}
                   className={`text-4xl p-2 rounded-full transition-all ${
-                    stressLevel === index + 1 ? 'bg-red-100 scale-125' : 'hover:bg-gray-100'
+                    stressLevel === index + 1 ? 'bg-blue-100 scale-125 border-2 border-blue-300' : 'hover:bg-blue-50'
                   }`}
                 >
                   {emoji}
                 </button>
               ))}
             </div>
-            <div className="text-center text-lg font-medium text-gray-700">
+            <div className="text-center text-lg font-medium text-blue-800">
               {['Very Low', 'Low', 'Moderate', 'High', 'Very High'][stressLevel - 1]}
             </div>
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-blue-900 mb-2">
               Notes (Optional)
             </label>
             <textarea
               value={stressNotes}
               onChange={(e) => setStressNotes(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="What's causing stress? Any coping strategies you used?"
               rows="3"
             />
@@ -773,7 +773,7 @@ const Wellness = () => {
 
           <button
             onClick={logStress}
-            className="w-full bg-red-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-red-700 transition-colors"
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Log Stress Level
           </button>
@@ -782,12 +782,12 @@ const Wellness = () => {
 
       {/* Productivity Tracking */}
       {activeTab === 'productivity' && (
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
-          <h2 className="text-xl font-semibold mb-6">How productive were you today?</h2>
+        <div className="bg-white border border-blue-200 rounded-lg shadow-sm p-6 max-w-2xl">
+          <h2 className="text-xl font-semibold text-blue-900 mb-6">How productive were you today?</h2>
           
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-900 mb-2">
                 Productivity Score (1-10)
               </label>
               <input
@@ -796,18 +796,18 @@ const Wellness = () => {
                 max="10"
                 value={productivityScore}
                 onChange={(e) => setProductivityScore(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer slider-thumb:bg-blue-600"
               />
-              <div className="flex justify-between text-sm text-gray-500 mt-1">
+              <div className="flex justify-between text-sm text-blue-600 mt-1">
                 <span>1</span>
-                <span className="font-medium text-lg">{productivityScore}</span>
+                <span className="font-medium text-lg text-blue-800">{productivityScore}</span>
                 <span>10</span>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-blue-900 mb-2">
                   Tasks Completed
                 </label>
                 <input
@@ -815,12 +815,12 @@ const Wellness = () => {
                   min="0"
                   value={tasksCompleted}
                   onChange={(e) => setTasksCompleted(parseInt(e.target.value) || 0)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-blue-900 mb-2">
                   Focus Time (minutes)
                 </label>
                 <input
@@ -828,19 +828,19 @@ const Wellness = () => {
                   min="0"
                   value={focusTime}
                   onChange={(e) => setFocusTime(parseInt(e.target.value) || 0)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-900 mb-2">
                 Notes (Optional)
               </label>
               <textarea
                 value={productivityNotes}
                 onChange={(e) => setProductivityNotes(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="What helped or hindered your productivity today?"
                 rows="3"
               />
@@ -848,7 +848,7 @@ const Wellness = () => {
 
             <button
               onClick={logProductivity}
-              className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 transition-colors"
+              className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
             >
               Log Productivity
             </button>
