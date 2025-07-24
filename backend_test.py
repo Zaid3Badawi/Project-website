@@ -244,7 +244,10 @@ class MindMateAPITester:
         """Test stress logging endpoint"""
         print("\n=== Testing Stress Logging ===")
         
+        # The API expects a StressEntry model, so we need to include all required fields
         stress_data = {
+            "id": "test-stress-id",
+            "user_id": self.user_id,  # This will be overridden by the backend
             "stress_level": 2,
             "triggers": ["work deadline", "traffic"],
             "coping_strategies": ["deep breathing", "meditation"],
