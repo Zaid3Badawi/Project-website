@@ -28,6 +28,8 @@ class MindMateAPITester:
         self.habit_id = None
         self.challenge_id = None
         self.friend_id = None
+        self.test_email = None
+        self.test_password = None
         
     def set_auth_header(self, token):
         """Set authorization header for authenticated requests"""
