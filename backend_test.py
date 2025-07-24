@@ -38,8 +38,12 @@ class MindMateAPITester:
         """Test user registration endpoint"""
         print("\n=== Testing User Registration ===")
         
+        # Use timestamp to ensure unique email
+        import time
+        timestamp = str(int(time.time()))
+        
         user_data = {
-            "email": "sarah.wellness@mindmate.com",
+            "email": f"sarah.wellness.{timestamp}@mindmate.com",
             "password": "SecurePass123!",
             "full_name": "Sarah Johnson",
             "age": 28
@@ -59,6 +63,9 @@ class MindMateAPITester:
                 # Set auth token for subsequent requests
                 self.set_auth_header(data['access_token'])
                 self.user_id = data['user']['id']
+                # Store credentials for login test
+                self.test_email = user_data['email']
+                self.test_password = user_data['password']
                 return True
             else:
                 print(f"❌ Registration failed: {response.text}")
