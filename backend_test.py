@@ -336,7 +336,22 @@ class MindMateAPITester:
         """Test get all users endpoint"""
         print("\n=== Testing Get All Users ===")
         
+        # First create another user for testing social features
+        print("Creating a second user for social testing...")
+        second_user_data = {
+            "email": "mike.fitness@mindmate.com",
+            "password": "FitnessPass456!",
+            "full_name": "Mike Thompson",
+            "age": 32
+        }
+        
         try:
+            # Create second user
+            register_response = self.session.post(f"{API_BASE}/auth/register", json=second_user_data)
+            if register_response.status_code == 200:
+                print("✅ Second user created successfully")
+            
+            # Now test get users
             response = self.session.get(f"{API_BASE}/social/users")
             print(f"Status Code: {response.status_code}")
             
