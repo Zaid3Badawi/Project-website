@@ -277,7 +277,10 @@ class MindMateAPITester:
         """Test productivity logging endpoint"""
         print("\n=== Testing Productivity Logging ===")
         
+        # The API expects a ProductivityEntry model, so we need to include all required fields
         productivity_data = {
+            "id": "test-productivity-id",
+            "user_id": self.user_id,  # This will be overridden by the backend
             "productivity_score": 8,
             "tasks_completed": 5,
             "focus_time_minutes": 120,
