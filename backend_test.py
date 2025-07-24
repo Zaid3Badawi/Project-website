@@ -413,11 +413,15 @@ class MindMateAPITester:
         """Test challenge creation endpoint"""
         print("\n=== Testing Challenge Creation ===")
         
+        # The API expects a Challenge model, so we need to include all required fields
         challenge_data = {
+            "id": "test-challenge-id",
             "name": "30-Day Meditation Challenge",
             "description": "Meditate for at least 10 minutes every day for 30 days",
             "category": "mental_health",
             "duration_days": 30,
+            "participants": [],
+            "created_by": self.user_id,  # This will be overridden by the backend
             "is_active": True
         }
         
